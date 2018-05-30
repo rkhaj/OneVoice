@@ -32,6 +32,12 @@ export class SpeechService {
         this.zone.run(() => {
           this.words$.next({type: 'adj', 'word': adj});
         });
+      },
+      'movement :move': (move) => {
+        this.zone.run(() => {
+          this.words$.next({type: 'move', 'word': move});
+          window.scrollBy(0, 1000);
+        });
       }
     };
     annyang.addCommands(commands);

@@ -10,6 +10,7 @@ export class KeyboardComponent {
   nouns: string[] = new Words().array;
   verbs: string[] = new Words().array;
   adjs: string[] = new Words().array;
+  moves: string[] = new Words().array;
 
   constructor() { }
 
@@ -17,6 +18,7 @@ export class KeyboardComponent {
     this.nouns = e.nouns;
     this.verbs = e.verbs;
     this.adjs = e.adjs;
+    this.moves = e.moves;
   }
 
 }

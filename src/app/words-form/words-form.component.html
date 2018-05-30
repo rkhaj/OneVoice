@@ -1,5 +1,19 @@
 <form (submit)="done()" #wordsForm="ngForm">
   <div class="row">
+      <div class="col-md-4">
+          <h3>Movemnets <a class="badge badge-pill badge-info" href="http://www.grammar-monster.com/lessons/adjectives.htm" title="Movements are commands." target="_blank">?</a></h3>
+          <p class="small">For best results, be particularly <strong>creative</strong> with your movement commands.</p>
+          <div *ngFor="let mov of moves; index as i; trackBy: trackWords" class="mb-2">
+            <input
+              type="text"
+              name="mov-{{i}}"
+              class="form-control"
+              [(ngModel)]="moves[i]"
+              [disabled]="generating"
+              [placeholder]="getPlaceholder('move', i)"
+              required>
+          </div>
+        </div>
     <div class="col-md-4">
       <h3>Nouns <a class="badge badge-pill badge-info" href="http://www.grammar-monster.com/lessons/nouns.htm" title="Nouns are naming words, usually people, places, or things." target="_blank">?</a></h3>
       <p class="small">For best results, please enter 1 <strong>person</strong>, 2 <strong>places</strong>, and 2 <strong>things</strong>.</p>
@@ -42,6 +56,7 @@
           required>
       </div>
     </div>
+    
   </div>
 
   <div class="row">

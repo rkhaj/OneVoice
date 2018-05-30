@@ -11,14 +11,14 @@ import 'rxjs/add/operator/map';
   styleUrls: ['./listen.component.scss']
 })
 export class ListenComponent implements OnInit, OnDestroy {
+  moves: string[] = new Words().array;
+  moveSub: Subscription;
   nouns: string[] = new Words().array;
   verbs: string[] = new Words().array;
   adjs: string[] = new Words().array;
-  moves: string[] = new Words().array;
   nounSub: Subscription;
   verbSub: Subscription;
   adjSub: Subscription;
-  moveSub: Subscription;
   arrayFull: string;
   errorsSub: Subscription;
   errorMsg: string;
@@ -30,6 +30,7 @@ export class ListenComponent implements OnInit, OnDestroy {
     this._listenNouns();
     this._listenVerbs();
     this._listenAdj();
+    this._listenMovement();
     this._listenErrors();
   }
 
@@ -69,6 +70,19 @@ export class ListenComponent implements OnInit, OnDestroy {
         adj => {
           this._setError();
           this.adjs = this._updateWords('adjectives', this.adjs, adj);
+        }
+      );
+  }
+
+  private _listenMovement() {
+    // debugger;
+    this.moveSub = this.speech.words$
+      .filter(obj => obj.type === 'move')
+      .map(moveObj => moveObj.word)
+      .subscribe(
+        move => {
+          this._setError();
+          this.moves = this._updateWords('movements', this.moves, move);
         }
       );
   }

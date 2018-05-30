@@ -10,14 +10,16 @@ export class WordsFormComponent {
   @Input() nouns: string[];
   @Input() verbs: string[];
   @Input() adjs: string[];
+  @Input() moves: string[];
   generating = false;
   placeholders = {
     noun: ['person', 'place', 'place', 'thing', 'thing'],
-    verb: ['present', 'present', 'past', 'past', 'past']
+    verb: ['present', 'present', 'past', 'past', 'past'],
+    move: ['up', 'down', 'left', 'right', 'forward']
   };
 
-  constructor(private ml: MadlibsService) { }
-
+  constructor(private ml: MadlibsService) {
+  }
   trackWords(index) {
     return index;
   }
@@ -30,7 +32,8 @@ export class WordsFormComponent {
     this.ml.submit({
       nouns: this.nouns,
       verbs: this.verbs,
-      adjs: this.adjs
+      adjs: this.adjs,
+      moves: this.moves
     });
     this.generating = true;
   }

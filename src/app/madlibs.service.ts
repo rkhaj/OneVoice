@@ -84,14 +84,24 @@ export class MadlibsService {
     return Observable.forkJoin([adj$, adj$, adj$, adj$, adj$]);
   }
 
+  getMoves$() {
+    const move$ = this.http
+      .get(`${this._API}navigation`, {responseType: 'text'})
+      .map(this._stringSuccessHandler)
+      .catch(this._errorHandler);
+
+    return Observable.forkJoin([move$, move$, move$, move$, move$]);
+  }
+
   getWords$() {
     return Observable
-      .zip(this.getNouns$(), this.getVerbs$(), this.getAdjs$())
+      .zip(this.getNouns$(), this.getVerbs$(), this.getAdjs$(), this.getMoves$())
       .map((res) => {
         return {
           nouns: res[0],
           verbs: res[1],
-          adjs: res[2]
+          adjs: res[2],
+          moves: res[3]
         };
       });
   }
