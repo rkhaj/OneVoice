@@ -12,6 +12,7 @@ import { MadlibComponent } from './madlib/madlib.component';
 import { WordsFormComponent } from './words-form/words-form.component';
 import { KeyboardComponent } from './keyboard/keyboard.component';
 import { GenerateWordsComponent } from './generate-words/generate-words.component';
+import { SampleFormComponent } from './sample-form/sample-form.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { GenerateWordsComponent } from './generate-words/generate-words.componen
     MadlibComponent,
     WordsFormComponent,
     KeyboardComponent,
-    GenerateWordsComponent
+    GenerateWordsComponent,
+    SampleFormComponent
   ],
   imports: [
     BrowserModule,

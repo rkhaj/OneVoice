@@ -33,10 +33,32 @@ export class SpeechService {
           this.words$.next({type: 'adj', 'word': adj});
         });
       },
-      'movement :move': (move) => {
+      'focus :focus': (focus) => {
         this.zone.run(() => {
-          this.words$.next({type: 'move', 'word': move});
-          window.scrollBy(0, 1000);
+          this.words$.next({type: 'focus', 'word': focus});
+        });
+      },
+      'enter :enter': (enter) => {
+        this.zone.run(() => {
+          this.words$.next({type: 'enter', 'word': enter});
+        });
+      },
+      'scroll :move': (move) => {
+        this.zone.run(() => {
+          switch (move) {
+            case 'top':
+              window.scrollBy(0, -572);
+              break;
+            case 'down':
+              window.scrollBy(0, 572);
+              break;
+            case 'right':
+              window.scrollBy(200, 0);
+              break;
+            case 'left':
+              window.scrollBy(-200, 0);
+              break;
+          }
         });
       }
     };
