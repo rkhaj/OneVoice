@@ -1,39 +1,34 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
+import { RouterModule } from '@angular/router';
 
 import { AppComponent } from './app.component';
-import { MadlibsService } from './madlibs.service';
+import { HeaderComponent } from './header/header.component';
+import { OneHousingMenuComponent } from './one-housing-menu/one-housing-menu.component';
+import { LoginFormComponent } from './login-form/login-form.component';
+import { RepairsManageStagesFormComponent } from './repairs-manage-stages-form/repairs-manage-stages-form.component';
 import { SpeechService } from './speech.service';
-import { ProgressBarComponent } from './progress-bar/progress-bar.component';
-import { ListenComponent } from './listen/listen.component';
-import { MadlibComponent } from './madlib/madlib.component';
-import { WordsFormComponent } from './words-form/words-form.component';
-import { KeyboardComponent } from './keyboard/keyboard.component';
-import { GenerateWordsComponent } from './generate-words/generate-words.component';
-import { SampleFormComponent } from './sample-form/sample-form.component';
+import { AppRouting } from './one-voice.router';
+import { OneVoiceService } from './one-voice.service';
+import { HttpModule } from '@angular/http';
+import { HttpClient, HttpErrorResponse, HttpClientModule } from '@angular/common/http';
+
 
 @NgModule({
   declarations: [
     AppComponent,
-    ProgressBarComponent,
-    ListenComponent,
-    MadlibComponent,
-    WordsFormComponent,
-    KeyboardComponent,
-    GenerateWordsComponent,
-    SampleFormComponent
+    HeaderComponent,
+    OneHousingMenuComponent,
+    LoginFormComponent,
+    RepairsManageStagesFormComponent
   ],
   imports: [
     BrowserModule,
-    FormsModule,
+    AppRouting ,
+    HttpModule ,
     HttpClientModule
   ],
-  providers: [
-    MadlibsService,
-    SpeechService
-  ],
+  providers: [SpeechService , OneVoiceService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

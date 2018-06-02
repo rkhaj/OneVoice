@@ -3,6 +3,7 @@ import { Subject } from 'rxjs/Subject';
 
 // TypeScript declaration for annyang
 declare var annyang: any;
+declare var $: any;
 
 @Injectable()
 export class SpeechService {
@@ -10,10 +11,40 @@ export class SpeechService {
   errors$ = new Subject<{[key: string]: any}>();
   listening = false;
 
-  constructor(private zone: NgZone) {}
+  constructor(
+    private zone: NgZone
+  )  {}
+
+  textToSpeech(text) {
+    const message1 = new SpeechSynthesisUtterance(text);
+    const voices = speechSynthesis.getVoices();
+    message1.voice = voices[0];
+    speechSynthesis.speak(message1);
+  }
+
 
   get speechSupported(): boolean {
     return !!annyang;
+  }
+
+  startListening() {
+    console.log('lsitening');
+    annyang.setLanguage('en-IN');
+    annyang.start();
+    this.listening = true;
+  }
+
+  abort() {
+    annyang.abort();
+    this.listening = false;
+  }
+
+  sleep() {
+    annyang.pause();
+  }
+
+  wakeUp() {
+    annyang.resume();
   }
 
   init() {
@@ -43,6 +74,31 @@ export class SpeechService {
           this.words$.next({type: 'enter', 'word': enter});
         });
       },
+      'check :check': (check) => {
+        this.zone.run(() => {
+          this.words$.next({type: 'check', 'word': check});
+        });
+      },
+      'remove :remove': (remove) => {
+        this.zone.run(() => {
+          this.words$.next({type: 'remove', 'word': remove});
+        });
+      },
+      'show :show': (show) => {
+        this.zone.run(() => {
+          this.words$.next({type: 'show', 'word': show});
+        });
+      },
+      'select :select': (select) => {
+        this.zone.run(() => {
+          this.words$.next({type: 'select', 'word': select});
+        });
+      },
+      'click :click': (click) => {
+        this.zone.run(() => {
+          this.words$.next({type: 'click', 'word': click});
+        });
+      },
       'scroll :move': (move) => {
         this.zone.run(() => {
           switch (move) {
@@ -61,8 +117,10 @@ export class SpeechService {
           }
         });
       }
+
     };
     annyang.addCommands(commands);
+    annyang.debug();
 
     // Log anything the user says and what speech recognition thinks it might be
     // annyang.addCallback('result', (userSaid) => {
@@ -95,14 +153,5 @@ export class SpeechService {
     });
   }
 
-  startListening() {
-    annyang.start();
-    this.listening = true;
-  }
-
-  abort() {
-    annyang.abort();
-    this.listening = false;
-  }
 
 }

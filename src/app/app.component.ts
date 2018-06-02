@@ -1,6 +1,4 @@
 import { Component } from '@angular/core';
-import { SpeechService } from './speech.service';
-import { MadlibsService } from './madlibs.service';
 
 @Component({
   selector: 'app-root',
@@ -8,8 +6,5 @@ import { MadlibsService } from './madlibs.service';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-
-  constructor(
-    public ml: MadlibsService,
-    public speech: SpeechService) {}
+  title = 'app';
 }

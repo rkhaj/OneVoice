@@ -1,9 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
-.btn {
-  cursor: pointer;
-}
-
-body {
-  height: 7500px;
-  width: 5000px;
-}
+@import '../src/assets/styles/_custom-variable';
+@import "../src/assets/styles/varibles.styles";
+@import "../src/assets/styles/_colors";
+@import "../src/assets/styles/all";
+@import "../node_modules/bootstrap/dist/css/bootstrap-grid.css";
+@import "../node_modules/bootstrap/dist/css/bootstrap.css";
