@@ -1,0 +1,56 @@
+
+<!-- header-starts -->
+<div class="header-section container-fluid">
+  <div class="row" tabindex="-1">
+    <!-- logo  start-->
+    <div class="col-md-3">
+      <!-- <a [routerLink]="['dashboard']" tabindex="0" class="logo-sizeing"> -->
+        <img class="onehousing-logo mt-md-3" src="assets/images/OneHousing-logo_lrg.png" alt="One housing logo"  />
+      <!-- </a> -->
+    </div>
+    <!-- logo End -->
+  
+    <!--User Profile start -->
+    <div class="col-md-9 pr-md-0">
+      <div class="float-right loguout-container">
+        <a class="logout-ico"  tabindex="6"></a>
+      </div>
+      <div class="float-right header-profile respons-tab">
+        <ul>
+          <li>
+            <!-- <a class="search"></a> -->
+            <form action="" autocomplete="on">
+                <input id="search" name="search" type="text" placeholder="What're we looking for ?" tabindex="1">
+                <input id="search_submit" value="Rechercher" type="submit" tabindex="2" >
+                <!-- <kendo-multiselect [data]="listItems" [(ngModel)]="value"></kendo-multiselect> -->
+                <span class="hub-text-srch">Hub</span>
+            </form>
+          </li>
+          <li>
+              <button class="button-mic" (click)="listenSpeaker()" [disabled]="speech.listening">
+                  <img class="voice" src="/assets/images/voice.png">
+                </button>
+            <!-- <a class="menu-ico" (click)="openMenu($event)" tabindex="3" ></a> -->
+            <!-- <one-housing-menu></one-housing-menu> -->
+          </li>
+          <li>
+            <a class="notification" tabindex="4"></a>
+          </li>
+          <li>
+            <div>
+            <!-- <span>Welcome</span> -->
+            <!-- <span>{{ name }}</span> -->
+            <img  src="{{country}}"  alt="Country"  alt="localizetion" />
+            <span class="inline-block lang-dropdown" >
+              <!-- <kendo-dropdownlist [data]="listItems" [value]="selectedValue" (selectionChange)="selectionChange($event)" tabindex="5">
+              </kendo-dropdownlist> -->
+            </span>
+          </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+</div>
+<!-- //header-ends -->

@@ -1,0 +1,65 @@
+<section class="login">
+  <div class="container-fluid login-bg">
+    <div class="row">
+      <div class="col-md-6">
+        <img class="img-fluid w-20" src="assets/images/OneHousing-logo_lrg.png" alt="One housing logo" />
+      </div>
+     
+    </div>
+    <div class="row">
+      <div class="col-md-5 mx-auto my-md-auto">
+        <div class="login-container mt-md-5">
+          <div class="card-body bg-white top-radius px-md-5">
+            <div class="mt-2">
+              <p class="sign-in">Sign in <button class="button-mic" (click)="listenSpeaker()" [disabled]="speech.listening">
+                  <img class="voice" src="/assets/images/voice.png">
+                </button></p>
+            </div>
+            <div class="mt-4">
+              <form class="k-form" novalidate>
+                <div class="row">
+                  <div class="col-md-1">
+                    <i class="k-icon k-i-user login-icon"></i>
+                  </div>
+                  <div class="col-md-11">
+                    <input class="k-textbox border-none" id="user" placeholder="userName" />
+                    <!-- <div class="error-msg" >Invalid username</div> -->
+                  </div>
+                </div>
+                <div class="hr mt-md-3 mb-md-2"></div>
+                <div class="row">
+                  <div class="col-md-1">
+                    <img class="password-ico" src="assets/images/password.png">
+                  </div>
+                  <div class="col-md-11">
+                    <input class="k-textbox border-none" id="password" placeholder="password" type="password" />
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-12 ml-md-1 mt-md-2">
+                    <a class="difficulty" href="#">Difficulty signing in?</a>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-12 mt-md-3">
+                    <img class="float-right" src="assets/images/powered_by_capita.jpg" alt="One housing logo" />
+                  </div>
+                </div>
+                <!-- <div class="error-msg" *ngIf="!loginResponse">{{validationMsg}}</div> -->
+              </form>
+            </div>
+          </div>
+          <div class="bg-blue top-bottom">
+            <div class="row">
+              <div class="col-md-12 text-center py-md-1">
+                <p>
+                  <button class="login-btn" id="login">LOGIN</button>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

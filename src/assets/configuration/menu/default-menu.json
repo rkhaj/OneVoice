@@ -1,0 +1,281 @@
+{
+  "activemenu": "Contractor",
+  "headerbar": [
+    "Housing",
+    "Assets",
+    "Contractor",
+    "Administration"
+  ],
+  "Contractor": [
+    {
+      "headername": "Repairs",
+      "links": [
+        {
+          "linkname": "Contract list",
+          "routingpath": "repair"
+        }
+      ]
+    },
+    {
+      "headername": "Operatives and timesheets",
+      "links": [
+        {
+          "linkname": "Manage operatives",
+          "routingpath": "Operatives"
+        },
+        {
+          "linkname": "Manage timesheet",
+          "routingpath": "timesheetManagement"
+        }
+      ]
+    },
+    {
+      "headername": "Purchasing",
+      "links": [
+        {
+          "linkname": "Purchase ledger",
+          "routingpath": "PurchaseLedger"
+        },
+        {
+          "linkname": "Document processing",
+          "routingpath": "DocumentProcessing"
+        },
+        {
+          "linkname": "Credit note processing",
+          "routingpath": "creditNotes"
+        },
+        {
+          "linkname": "PO requisition",
+          "routingpath": "purchaseRequisition"
+        }
+      ]
+    },
+    {
+      "headername": "Store",
+      "links": [
+        {
+          "linkname": "Catalogue set up",
+          "routingpath": "ManageStockItem"
+        },
+        {
+          "linkname": "Location",
+          "routingpath": "location"
+        },
+        {
+          "linkname": "Stock replenishment",
+          "routingpath": "stockreplenishment"
+        },
+        {
+          "linkname": "Supplier details",
+          "routingpath": "suppliers/supplierMain"
+        }
+      ]
+    },
+    {
+      "headername": "Master query",
+      "links": [
+        {
+          "linkname": "Master query",
+          "routingpath": "dashboard"
+        }
+      ]
+    },
+    {
+      "headername": "Job completions",
+      "links": [
+        {
+          "linkname": "Job completions",
+          "routingpath": "dashboard"
+        }
+      ]
+    },
+    {
+      "headername": "Job costing",
+      "links": [
+        {
+          "linkname": "Job costing",
+          "routingpath": "dashboard"
+        }
+      ]
+    }
+  ],
+  "Housing": [
+    {
+      "headername": "Lorem ipsum",
+      "links": [
+        {
+          "linkname": "Lorem ipsum",
+          "routingpath": "dashboard"
+        }
+      ]
+    },
+    {
+      "headername": "Lorem ipsum",
+      "links": [
+        {
+          "linkname": "Lorem ipsum",
+          "routingpath": "dashboard"
+        }
+      ]
+    },
+    {
+      "headername": "Demo Translation",
+      "links": [
+        {
+          "linkname": "Translation",
+          "routingpath": "DemoTranslation"
+        }
+      ]
+    }
+  ],
+  "Assets": [
+    {
+      "headername": "Location assets",
+      "links": [
+        {
+          "linkname": "Location components",
+          "routingpath": "dashboard"
+        },
+        {
+          "linkname": "Asbestos register",
+          "routingpath": "asbestosRegister"
+        },
+        {
+          "linkname": "RDSAP",
+          "routingpath": "dashboard"
+        }
+      ]
+    },
+    {
+      "headername": "Scheme management",
+      "links": [
+        {
+          "linkname": "Scheme management",
+          "routingpath": "schemeManagement"
+        },
+        {
+          "linkname": "Manage stage documents",
+          "routingpath": "manageStageDocuments"
+        }
+      ]
+    },
+    {
+      "headername": "Asset surveys",
+      "links": [
+        {
+          "linkname": "Stock condition surveys",
+          "routingpath": "stockConditionSurvey"
+        },
+        {
+          "linkname": "Asbestos surveys",
+          "routingpath": "AsbestosSurvey"
+        }
+      ]
+    },
+    {
+      "headername": "Property management",
+      "links": [
+        {
+          "linkname": "Planned maintenance",
+          "routingpath": "dashboard"
+        },
+        {
+          "linkname": "Development",
+          "routingpath": "dashboard"
+        },
+        {
+          "linkname": "Servicing",
+          "routingpath": "dashboard"
+        }
+      ]
+    },
+    {
+      "headername": "Life cycle costing",
+      "links": [
+        {
+          "linkname": "Manage component data",
+          "routingpath": "manageComponents"
+        },
+        {
+          "linkname": "Question set",
+          "routingpath": "questionset"
+        },
+        {
+          "linkname": "Repair stage",
+          "routingpath": "repairstage"
+        },
+        {
+          "linkname": "Scenario planner",
+          "routingpath": "dashboard"
+        }
+      ]
+    },
+    {
+      "headername": "Invoicing",
+      "links": [
+        {
+          "linkname": "Maintain invoices",
+          "routingpath": "invoicing/manageInvoices"
+        },
+        {
+          "linkname": "Manage certificates",
+          "routingpath": "invoicing/manageCertificates"
+        },
+        {
+          "linkname": "Manage retention",
+          "routingpath": "invoicing/manageRetentions"
+        },
+        {
+          "linkname": "Manage statements",
+          "routingpath": "invoicing/manageStatements"
+        }
+      ]
+    }
+  ],
+  "Administration": [
+    {
+      "headername": "Configuration",
+      "links": [
+        {
+          "linkname": "System controls",
+          "routingpath": "asbestosSystemControl"
+        },
+        {
+          "linkname": "System options",
+          "routingpath": "asbestosSystemOptions"
+        }
+      ]
+    },
+    {
+      "headername": "User security",
+      "links": [
+        {
+          "linkname": "System controls",
+          "innerlinks": [
+            {
+              "linkname": "Sub link1",
+              "routingpath": "asbestosSystemControl"
+            },
+            {
+              "linkname": "Sub link2",
+              "routingpath": "asbestosSystemControl"
+            },
+            {
+              "linkname": "Sub link3",
+              "routingpath": "asbestosSystemControl"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "headername": "Interfaces",
+      "links": [
+        {
+          "linkname": "Asbestos Import/Export",
+          "routingpath": "AsbestosImportExport"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,96 @@
+
+
+// Fonts
+$font-size0: 11px;
+$font-size1:14px;
+$font-size2:18px;
+$font-size3:20px;
+$font-size4:22px;
+$font-size5:24px;
+$font-size6:26px;
+$font-size7:28px;
+$font-size8:30px;
+$font-size9:32px;
+$font-size10:34px;
+$font-size11:36px;
+$font-size12:38px;
+$font-size13:40px;
+$font-size14:42px;
+$font-size15:44px;
+$font-size16:46px;
+$font-size17:48px;
+$font-size18:50px;
+$font-lbl-input:18px;
+$fonth1:16px;
+
+@mixin font-size11() {
+  font-size: $font-size0;
+}
+ @mixin font-size14() {
+   font-size: $font-size1;
+  }
+  @mixin font-size16() {
+    font-size: $fonth1;
+   }
+  @mixin font-size18() {
+    font-size: $font-size2;
+   }
+   @mixin font-size20() {
+    font-size: $font-size3;     
+   }
+   @mixin font-size22() {
+    font-size: $font-size4;
+   }
+   @mixin font-size24() {
+    font-size: $font-size5;
+   }
+   @mixin font-size26() {
+    font-size: $font-size6;
+   }
+   @mixin font-size28() {
+    font-size: $font-size7;
+   }
+   @mixin font-size30() {
+    font-size: $font-size8;
+   }
+
+   @mixin font-size32() {
+    font-size: $font-size9;
+   }
+   @mixin font-size34() {
+    font-size: $font-size10;
+   }
+   @mixin font-size36() {
+    font-size: $font-size11;
+   }
+   @mixin font-size38() {
+    font-size: $font-size12;
+   }
+   @mixin font-size40() {
+    font-size: $font-size13;
+   }
+   @mixin font-size42() {
+    font-size: $font-size14;
+   }
+   @mixin font-size44() {
+    font-size: $font-size15;
+   }
+   @mixin font-size46() {
+    font-size: $font-size16;
+   }
+   @mixin font-size48() {
+    font-size: $font-size17;
+   }
+   @mixin font-size50() {
+    font-size: $font-size18;
+   } 
+
+   @mixin lato-regular() {  
+    $lato-regular:'Latoregular';
+   }
+   @mixin lato-bold() {  
+    $lato-bold:'LatoBold'; 
+   }
+   @mixin Exo-med() {  
+     $Exo-med:'Exomedium';
+   }

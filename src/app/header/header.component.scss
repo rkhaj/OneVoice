@@ -1,0 +1,219 @@
+/*----------------------------
+        HEADER SECTION
+-----------------------------*/
+@import '../../assets/styles/_colors.scss';
+
+.header-section {
+  background: $white;
+  height: 92px;
+  z-index: 1000;
+  position: fixed;
+  box-shadow: -28px 25px 15px -29px $One-grey-8;
+.header-block {
+  display: block;
+}
+
+.onehousing-logo{
+  width: 67%;
+}
+
+.header_logo {
+  width: 18%;
+  height: 60px;
+  background-size: 100px;
+  display: block;
+  margin-top: 12px;
+  margin-left: 12px;
+  cursor: pointer;
+}
+.loguout-container{
+  background: $skyblue-50;
+  width: 96px;
+  height: 93px;
+  display: table;
+  .logout-ico{
+    background: url(../../assets/images/sign-out.png) no-repeat;
+    width: 96px;
+    height: 92px;
+    z-index: 9;
+    position: absolute;
+    background-position: 24px 24px;
+    cursor: pointer;
+    }
+  }
+
+  .header-profile{
+    padding: 26px;
+    ul{
+      list-style: none;
+      display: flex;
+      li{
+        display: inline-block;
+        border-right: 2px dotted $One-grey-6;
+        padding: 6px 14px;
+        width: 70px;
+        height: 38px;
+      }
+      li:last-child{
+        width: 354px !important;
+        height: auto !important;
+        border: none;
+      }
+      .search{
+        background: url(../../assets/images/search-hub.png) no-repeat;
+        width: 29px;
+        height: 29px;
+        z-index: 9;
+        position: absolute;
+        display: block;
+        background-position: center;
+        cursor: pointer;
+        }
+      .menu-ico{
+        background: url(../../assets/images/menu.png) no-repeat;
+        width: 38px;
+        height: 30px;
+        z-index: 9;
+        position: absolute;
+        display: block;
+        background-position: center;
+        cursor: pointer;
+        }
+      .notification{
+        background: url(../../assets/images/notifications.png) no-repeat;
+        width: 38px;
+        height: 30px;
+        z-index: 9;
+        position: absolute;
+        display: block;
+        background-position: center;
+        cursor: pointer;
+        }  
+        .lang-flag{
+          // background: url(../../assets/images/uk.png) no-repeat;
+          width: 35px;
+          height: 25px;
+          z-index: 9;
+          position: absolute;
+          display: inline-block;
+          }  
+    }
+  }
+
+/* Globle Search Start*/
+  input[type="text"] {
+    height: 60px;
+    font-size: 14px;
+    border: none;
+    padding: 3px;
+    width: 0px;
+    position: absolute;
+    top: 1rem;
+    right: 38.5rem;
+    background: none;
+    padding-right: 50px;
+    z-index: 5000000;
+    transition: width 0.4s cubic-bezier(0, 0.795, 1, 1);
+    cursor: pointer;
+  }
+  
+  input[type="text"]:focus:hover {
+    border-bottom: 1px solid $One-grey-6;
+  }
+  
+  input[type="text"]:focus {
+    width: 300px;
+    z-index: 1;
+    border-bottom: 1px solid $One-grey-6;
+    cursor: text;
+  }
+  input[type="submit"] {
+    height: 67px;
+    width: 80px;
+    display: inline-block;
+    background:  url(../../assets/images/search-hub.png) center left no-repeat;
+    text-indent: -10000px;
+    border: none;
+    position: absolute;
+    top: 16px;
+    z-index: 2;
+    cursor: pointer;
+    opacity: 0.4;
+    cursor: pointer;
+    transition: opacity .4s ease;
+  }
+  .button-mic{
+    background: transparent;
+    border: none;
+  }
+  .voice{
+    height: 33px;
+    width: 33px;
+    background-size: 33px 33px;
+    display: inline-block;
+    background:  url(../../assets/images/voice.png) center left no-repeat;
+    border: none;
+    position: absolute;
+    z-index: 2;
+    cursor: pointer;
+    transition: opacity .4s ease;
+    margin-top: -20px;
+  }
+/* Globle Search End */
+  .hub-text-srch{
+    font-size: 11px;
+    margin-left: 26px;
+  }
+  
+}
+
+
+.navbar-brand { 
+  width: 70px;
+  height: 50px;
+  background: url('http://www.sneaker-mission.com/uploads/3/1/2/7/31279819/5617441.png') no-repeat center center;
+  background-size: 50px;  
+}
+
+.nav-tabs {
+  display: inline-block;
+  border-bottom: none;
+  padding-top: 15px;
+  font-weight: bold;
+}
+.nav-tabs > li > a, 
+.nav-tabs > li > a:hover, 
+.nav-tabs > li > a:focus, 
+.nav-tabs > li.active > a, 
+.nav-tabs > li.active > a:hover,
+.nav-tabs > li.active > a:focus {
+  border: none;
+  border-radius: 0;
+}
+
+.nav-list { border-bottom: 1px solid #eee; }
+.nav-list > li { 
+  padding: 20px 15px 15px;
+  border-left: 1px solid #eee; 
+}
+.nav-list > li:last-child { border-right: 1px solid #eee; }
+.nav-list > li > a:hover { text-decoration: none; }
+.nav-list > li > a > span {
+  display: block;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.mega-dropdown { position: static !important; }
+.mega-dropdown-menu {
+  padding: 20px 15px 15px;
+  text-align: center;
+  width: 100%;
+}
+.lang-dropdown{
+  width: 82px;
+}
+
+.logo-sizeing{
+  padding: 43px 30px;
+}

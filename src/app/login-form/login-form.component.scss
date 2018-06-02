@@ -1,0 +1,79 @@
+@import '../../assets/styles/_colors.scss';
+@import '../../assets/styles/mixins.styles.scss';
+
+
+.login{
+    .bg-blue{
+        background-color: $skyblue-300;
+        color: $white;
+    }
+    .difficulty{
+        @include font-size11;
+        color: $skyblue-50;
+        text-decoration: underline;
+    }
+    .login-icon{
+        @include font-size32;
+        color: $grey-100;
+    }
+    p{
+        @include font-size24;
+        margin-bottom: 0px;
+    }
+    .sign-in{
+        color: $skyblue-200;
+    }
+    .login-bg{
+        background: $white url('../../assets/images/One-LoginPage_bg_jm.jpg')no-repeat;
+        background-position: 0px 15rem;
+        background-size: auto;
+        height: 45.8rem;
+    }
+    .k-textbox:focus {
+        box-shadow: none !important;
+    }
+    .login-container{
+        box-shadow: 0px 0px 10px -4px;
+        border-radius: 10px;
+    }
+
+    .top-radius{
+        border-top-right-radius: 10px;
+        border-top-left-radius: 10px; 
+    }
+    .top-bottom{
+        border-bottom-right-radius: 10px;
+        border-bottom-left-radius: 10px; 
+    }
+    .login-btn{
+        background-color: $skyblue-300;
+        color: $white;
+        border: none;
+        outline: none;
+        cursor: pointer;
+    }
+    .password-ico{
+        width: 1.8rem;
+        margin-top: 10px;
+        margin-left: 5px;
+    }
+
+}
+
+.button-mic{
+    background: transparent;
+    border: none;
+  }
+  .voice{
+    height: 22px;
+    width: 22px;
+    background-size: 22px 22px;
+    display: inline-block;
+    background:  url(../../assets/images/voice.png) center left no-repeat;
+    border: none;
+    position: absolute;
+    z-index: 2;
+    cursor: pointer;
+    transition: opacity .4s ease;
+    margin-top: -20px;
+  }
