@@ -10,6 +10,8 @@ import { RepairsManageStagesFormComponent } from './repairs-manage-stages-form/r
 import { SpeechService } from './speech.service';
 import { AppRouting } from './one-voice.router';
 import { OneVoiceService } from './one-voice.service';
+import { DialogsModule } from '@progress/kendo-angular-dialog';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpModule } from '@angular/http';
 import { HttpClient, HttpErrorResponse, HttpClientModule } from '@angular/common/http';
 
@@ -26,7 +28,9 @@ import { HttpClient, HttpErrorResponse, HttpClientModule } from '@angular/common
     BrowserModule,
     AppRouting ,
     HttpModule ,
-    HttpClientModule
+    DialogsModule,
+    HttpClientModule,
+    BrowserAnimationsModule
   ],
   providers: [SpeechService , OneVoiceService],
   bootstrap: [AppComponent]

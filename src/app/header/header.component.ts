@@ -11,6 +11,8 @@ import { SpeechService } from '../speech.service';
 })
 export class HeaderComponent implements OnInit {
 
+  errorsSub: Subscription;
+  errorMsg: any;
   public imagePath = '';
   public country = '';
   @ViewChild(OneHousingMenuComponent) megaMenu: OneHousingMenuComponent;
@@ -21,7 +23,8 @@ export class HeaderComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.speech.startListening();
+    // this.speech.startListening();
+    this.speech.init();
     this.country = '../../../assets/images/en.png';
   }
 

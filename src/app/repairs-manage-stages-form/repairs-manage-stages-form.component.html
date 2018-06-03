@@ -17,36 +17,20 @@
               <input type="text" class="k-textbox" id="map" />
             </div>
             <div class="col-md-6 k-form-field mb-md-3">
-              <label class="k-form-field" for="SECURITY" >Security</label>
-              <input type="text" class="k-textbox" id="SECURITY" />
+              <label class="k-form-field" for="security" >Security</label>
+              <input type="text" class="k-textbox" id="security" />
             </div>
             <div class="col-md-6 mb-md-3">
               <label class="k-form-field">Level</label>
               <input type="text" class="k-textbox" id="level"/>
             </div>
             <div class="col-md-6 mb-md-3">
-              <label class="k-form-field">Decription *</label>
-              <input type="text" class="k-textbox" id="DESCRIPTION" />
+              <label class="k-form-field">Decription </label>
+              <input type="text" class="k-textbox" id="description" />
             </div>
             <div class="col-md-6 mb-md-3">
               <label class="k-form-field">Status</label>
               <input type="text" class="k-textbox" id="status" />
-            </div>
-            <div class="col-md-3 k-form-field mb-md-3">
-              <input type="checkbox" class="k-checkbox" id="indicator"/>
-              <label class="k-checkbox-label" for="STATUS_INDI">Indicator</label>
-            </div>
-            <div class="col-md-3 k-form-field mb-md-3">
-              <input type="checkbox" class="k-checkbox" id="system" />
-              <label class="k-checkbox-label" for="SYS_INDI">System</label>
-            </div>
-            <div class="col-md-3 k-form-field mb-md-4">
-              <input type="checkbox" class="k-checkbox" id="significant"/>
-              <label class="k-checkbox-label" for="SIGNI_STAGE">significant</label>
-            </div>
-            <div class="col-md-3 k-form-field mb-md-4">
-              <input type="checkbox" class="k-checkbox" id="active" />
-              <label class="k-checkbox-label" for="ACTIVE">Active</label>
             </div>
           </div>
   </form>
@@ -54,4 +38,28 @@
     <button class="primary-btn float-right k-button" id="save">Save</button>
     <button class="secondary-btn float-right mr-md-2" id="cancel" >Cancel</button>
   </div>
+</div>
+
+<div class="row">
+  <kendo-dialog title="Checklist" *ngIf="opened" [minWidth]="250" [width]="450">
+    <div class="col-md-3 k-form-field mb-md-3">
+      <input type="checkbox" class="k-checkbox" id="indicator"/>
+      <label class="k-checkbox-label" for="STATUS_INDI">Indicator</label>
+    </div>
+    <div class="col-md-3 k-form-field mb-md-3">
+      <input type="checkbox" class="k-checkbox" id="system" />
+      <label class="k-checkbox-label" for="SYS_INDI">System</label>
+    </div>
+    <div class="col-md-3 k-form-field mb-md-4">
+      <input type="checkbox" class="k-checkbox" id="significant"/>
+      <label class="k-checkbox-label" for="SIGNI_STAGE">significant</label>
+    </div>
+    <div class="col-md-3 k-form-field mb-md-4">
+      <input type="checkbox" class="k-checkbox" id="active" />
+      <label class="k-checkbox-label" for="ACTIVE">Active</label>
+    </div>
+    <kendo-dialog-actions>
+      <button id="close">Close</button>
+    </kendo-dialog-actions>
+  </kendo-dialog>
 </div>

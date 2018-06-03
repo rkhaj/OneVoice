@@ -9,7 +9,7 @@ import { RepairsManageStagesFormComponent } from './repairs-manage-stages-form/r
 
 export const routes: Routes = [
   { path: 'login', component: LoginFormComponent },
-  { path: 'manage_stages', component: RepairsManageStagesFormComponent},
+  { path: 'create_stages', component: RepairsManageStagesFormComponent},
   { path: '', redirectTo: 'login', pathMatch: 'full' }
 ];
 export const AppRouting: ModuleWithProviders = RouterModule.forRoot(routes);

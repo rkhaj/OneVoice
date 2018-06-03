@@ -14,13 +14,17 @@ import { Subscription } from 'rxjs';
 })
 export class RepairsManageStagesFormComponent implements OnInit {
 
+  formSub: Subscription;
+  clickSub: Subscription;
+  opened: boolean;
+  addSub: Subscription;
   tickSub: Subscription;
   untickSub: Subscription;
   id: any;
-  entrySub: Subscription;
+  enteringSub: Subscription;
   focused: boolean;
   focus: string;
-  focusSub: Subscription;
+  focusingSub: Subscription;
   arrayFull: string;
   errorsSub: Subscription;
   errorMsg: string;
@@ -32,21 +36,24 @@ export class RepairsManageStagesFormComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+    // this.speech.startListening();
     this.speech.init();
     this._listenFocusCall();
-    this._checkForValue();
     this._tickCheckBox();
     this._uncheckBox();
+    this._listenAddCommand();
+    this._listenClickValue();
+    this._listenFormCommands();
   }
 
 
-  public Create() {
-    this.speech.textToSpeech('Create button clicked');
-    // this.speech.textToSpeech('Navigating to Repair Stage create form');
-    // this.router.navigate(['repairstage']);
-  }
+  // public Create() {
+  //   this.speech.textToSpeech('Create button clicked');
+  //   // this.speech.textToSpeech('Navigating to Repair Stage create form');
+  //   // this.router.navigate(['repairstage']);
+  // }
   private _listenFocusCall() {
-    this.focusSub = this.speech.words$
+    this.focusingSub = this.speech.words$
       .filter(obj => obj.type === 'focus')
       .map(focusObj => focusObj.word)
       .subscribe(
@@ -60,7 +67,7 @@ export class RepairsManageStagesFormComponent implements OnInit {
   }
   private _checkForValue() {
     if (this.id) {
-      this.entrySub = this.speech.words$
+      this.enteringSub = this.speech.words$
         .filter(obj => obj.type === 'enter')
         .map(entryObj => entryObj.word)
         .subscribe(
@@ -90,12 +97,13 @@ export class RepairsManageStagesFormComponent implements OnInit {
 
   private _uncheckBox() {
     this.untickSub = this.speech.words$
-    .filter(obj => obj.type === 'remove')
+    .filter(obj => obj.type === 'uncheck')
     .map(tickObj => tickObj.word)
     .subscribe(
       untick => {
         console.log(untick);
         (<HTMLInputElement>document.getElementById(`${untick}`)).checked = false;
+        this.speech.textToSpeech(`${untick} has been unchecked`);
       } );
   }
 
@@ -107,8 +115,56 @@ export class RepairsManageStagesFormComponent implements OnInit {
       tick => {
         console.log(tick);
         (<HTMLInputElement>document.getElementById(`${tick}`)).checked = true;
+        this.speech.textToSpeech(`${tick} has been checked`);
       } );
   }
 
+  private _listenAddCommand() {
+    this.addSub = this.speech.words$
+      .filter(obj => obj.type === 'add')
+      .map(addObj => addObj.word)
+      .subscribe(
+        add => {
+          this._setError();
+          if (add === 'checklist') {
+            // document.getElementById(`${focus}`).focus();
+            this.opened = true;
+            this.speech.textToSpeech(`Here is a checklist for you`);
+          }
+        }
+      );
+  }
+
+  private _listenClickValue() {
+    this.clickSub = this.speech.words$
+      .filter(obj => obj.type === 'click')
+      .map(clickObj => clickObj.word)
+      .subscribe(
+        click => {
+          this._setError();
+          if (click === 'close') {
+           this.opened = false;
+           this.speech.textToSpeech(`Checklist has been closed`);
+          }
+        }
+      );
+  }
+
+  private _listenFormCommands() {
+    this.formSub = this.speech.words$
+      .filter(obj => obj.type === 'form')
+      .map(formObj => formObj.word)
+      .subscribe(
+        form => {
+          this._setError();
+          if (form === 'submit') {
+            this.speech.textToSpeech(`form has been submitted`);
+          } else if (form === 'cancel') {
+            this.speech.textToSpeech(`form has been cancelled routing back to login page`);
+            this.router.navigate(['login']);
+          }
+        }
+      );
+  }
 
 }

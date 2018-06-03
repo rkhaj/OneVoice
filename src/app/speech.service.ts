@@ -69,9 +69,18 @@ export class SpeechService {
           this.words$.next({type: 'focus', 'word': focus});
         });
       },
+      'pause listen': (pause) => {
+        console.log('paused');
+        this.abort();
+      },
       'enter :enter': (enter) => {
         this.zone.run(() => {
-          this.words$.next({type: 'enter', 'word': enter});
+          setTimeout(() => this.words$.next({type: 'enter', 'word': enter}));
+        });
+      },
+      'add :add': (add) => {
+        this.zone.run(() => {
+          this.words$.next({type: 'add', 'word': add});
         });
       },
       'check :check': (check) => {
@@ -79,9 +88,9 @@ export class SpeechService {
           this.words$.next({type: 'check', 'word': check});
         });
       },
-      'remove :remove': (remove) => {
+      'uncheck :uncheck': (uncheck) => {
         this.zone.run(() => {
-          this.words$.next({type: 'remove', 'word': remove});
+          this.words$.next({type: 'uncheck', 'word': uncheck});
         });
       },
       'show :show': (show) => {
@@ -92,6 +101,11 @@ export class SpeechService {
       'select :select': (select) => {
         this.zone.run(() => {
           this.words$.next({type: 'select', 'word': select});
+        });
+      },
+      'form :form': (form) => {
+        this.zone.run(() => {
+          this.words$.next({type: 'form', 'word': form});
         });
       },
       'click :click': (click) => {
