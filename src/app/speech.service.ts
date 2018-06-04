@@ -69,7 +69,7 @@ export class SpeechService {
           this.words$.next({type: 'focus', 'word': focus});
         });
       },
-      'pause listen': (pause) => {
+      'stop listen': (pause) => {
         console.log('paused');
         this.abort();
       },

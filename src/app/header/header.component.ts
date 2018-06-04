@@ -35,8 +35,10 @@ export class HeaderComponent implements OnInit {
   public listenSpeaker() {
     if (this.speech.listening) {
       this.speech.abort();
+      this.speech.textToSpeech(`Listening has been stopped`);
     } else {
       this.speech.startListening();
+      this.speech.textToSpeech(`Listening has been resumed`);
     }
   }
 
