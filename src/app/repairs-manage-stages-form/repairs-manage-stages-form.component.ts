@@ -59,8 +59,12 @@ export class RepairsManageStagesFormComponent implements OnInit {
       .subscribe(
         focus => {
           this._setError();
-          document.getElementById(`${focus}`).focus();
-          this.id = focus;
+          if (document.getElementById(`${focus}`)) {
+            document.getElementById(`${focus}`).focus();
+          } else {
+            this.speech.textToSpeech(`Please provide a valid command`);
+          }
+         this.id = focus;
           this._checkForValue();
         }
       );

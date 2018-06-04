@@ -52,7 +52,12 @@ export class LoginFormComponent implements OnInit, OnDestroy {
       .subscribe(
         focus => {
           this._setError();
-          document.getElementById(`${focus}`).focus();
+          const focusEle = document.getElementById(`${focus}`);
+          if (focusEle) {
+            focusEle.focus()
+          } else {
+            this.speech.textToSpeech(`Please provide a valid command`);
+          }
           this.id = focus;
           this._listenEnterValue();
         }
@@ -61,21 +66,21 @@ export class LoginFormComponent implements OnInit, OnDestroy {
 
   private _listenEnterValue() {
     if (this.id) {
-    this.entrySub = this.speech.words$
-      .filter(obj => obj.type === 'enter')
-      .map(entryObj => entryObj.word)
-      .subscribe(
-        entry => {
-          (<HTMLInputElement>document.getElementById(this.id)).value = entry;
-          if (this.id === 'password') {
-            this.passEntered = true;
-            this.speech.textToSpeech(`The password has been entered`);
-          } else {
-            this.userEntered = true;
-            this.speech.textToSpeech(`The entered field value is ${entry}`);
+      this.entrySub = this.speech.words$
+        .filter(obj => obj.type === 'enter')
+        .map(entryObj => entryObj.word)
+        .subscribe(
+          entry => {
+            (<HTMLInputElement>document.getElementById(this.id)).value = entry;
+            if (this.id === 'password') {
+              this.passEntered = true;
+              this.speech.textToSpeech(`The password has been entered`);
+            } else {
+              this.userEntered = true;
+              this.speech.textToSpeech(`The entered field value is ${entry}`);
+            }
           }
-        }
-      );
+        );
     }
   }
 
@@ -92,10 +97,10 @@ export class LoginFormComponent implements OnInit, OnDestroy {
               this.speech.textToSpeech('Navigating to Repair Stage create form');
               this.router.navigate(['create_stages']);
             } else {
-              if (!this.passEntered) {
-                this.speech.textToSpeech('Please enter password');
-              } else if (!this.userEntered) {
+              if (!this.userEntered) {
                 this.speech.textToSpeech('Please enter username');
+              } else if (!this.passEntered) {
+                this.speech.textToSpeech('Please enter password');
               } else {
                 this.speech.textToSpeech('Please enter the valid login credentials');
               }
